@@ -1,0 +1,211 @@
+<div ng-show="loader.loading">
+    <p>{{spinnerData}}<i class="fa fa-spinner fa-spin"></i></p>
+</div>
+<div>
+<div ng-hide="hidePanel">
+    <div class="container-fluid">
+                <script type="text/ng-template" id="myModalContent.html">
+                    <div class="modal-dialog modal-lg" style="width:98%; margin-top:0px;">
+                        <div class="modal-dialog" style="overflow-y: scroll; width: 100%;  margin-top:0px;"> 
+                            <div class="modal-header">
+                                <h2 class="modal-title">Test Query Result</h2>
+                            </div>
+                            <div class="modal-body custom">
+                                <table class="table table-striped table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th ng-repeat="(header, value) in testQueryResult[0]">
+                                            {{header}}
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="row in testQueryResult">
+                                            <td ng-repeat="cell in row">
+                                            {{cell}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="modal-footer">
+                                <!--<button class="btn btn-success" type="button" ng-click="callCreateApp()">Create App</button>-->
+                                <button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </script>
+                <script type="text/ng-template" id="validationModalContent.html">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Validation Failed</h2>
+                    </div>
+                    <div class="modal-body">
+                        <ul>
+                            <div ng-repeat="data in validationErrors">
+                                <li>
+                                    <span style="color:red; font-size: 90%">{{data.error}}</span>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-info" type="button" ng-click="cancel()">Close</button>
+                    </div>
+                </script>
+        </div>
+    <div><h2>{{pageHeader}}</h2></div>
+    <hr/>
+    <div style="min-height: 400px; max-height: 400px;">
+        <form id="appInfoForm" name="appInfoForm" class="form-horizontal">
+        <uib-tabset active="activeTab">
+            <uib-tab index="0" heading="App/Integration Service Info" select="changeActiveTab(0)">
+                <br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="form-group required">
+                                <label class='control-label col-sm-3' for="txtAppName">App / Integration Service Name</label>
+                                <div class="col-sm-6">
+								 <span ng-show="appInfoForm.AppName.$error.pattern" style="color:red; font-size: 80%">Allow only the characters in (a-z A-Z 1-9 -)and should start and end with letter or number</span>
+                                <input id="txtAppName" name="AppName" ng-pattern="reNamepattern" required class="form-control" ng-model="app.name"></input>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group required">
+                                <label class='control-label col-sm-3'>Description</label>
+                                <div class="col-sm-6">
+                                    <textarea rows="4" style="font-size: 12px; font-family:Tahoma" required class="form-control" ng-model="app.descr"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group required">
+                                <label class='control-label col-sm-3' for="selOrg">Organization</label>
+                                <div class="col-sm-6">
+                                    <select required class="form-control" name='selectedOrg' ng-model='app.selectedOrg' 
+                                    ng-change="orgChange()" ng-options='org.name for org in stackatoOrg'></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group required">
+                                <label class='control-label col-sm-3' for="selSpace">Space</label>
+                                <div class="col-sm-6">
+                                    <select required class="form-control" name='selectedSpace' ng-model='app.selectedSpace' ng-options='space for space in stackatoSpace'></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label class='control-label col-sm-3' for="selSpace">Expose to Apigee</label>
+                                <div class="col-sm-6">
+                                    <div class="checkbox checkbox-success">
+                                        <input ng-init="app.exposeToApigee = false" id="checkbox1" type="checkbox" checked ng-model="app.exposeToApigee">
+                                        <label  for="checkbox1" style="font-weight: bold;"> </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </uib-tab>
+            <uib-tab index="1" heading="DB Connection Info" select="changeActiveTab(1)">
+                <br>
+                <table ng-table="databaseTable" class="table table-bordered table-striped table-hover table-condensed">
+                    <colgroup>
+                        <col width="5%" />
+                        <col width="20%" />
+                        <col width="15%" />
+                        <col width="20%" />
+                        <col width="7%" />
+                        <col width="10%" />
+                        <col width="10%" />
+                        <col width="10%" />
+                    </colgroup>
+                    <tr ng-repeat="dbconfigs in data">
+                        <td data-title="'Select'">
+                            <input type="radio"  name="optradio" ng-model="$parent.app.dbconfig" ng-value="dbconfigs">
+                        </td>
+                        <td data-title="'Name'" sortable="'db_name'" filter="{ 'db_name': 'text' }">
+                            {{dbconfigs.db_name}}
+                        </td>
+                        <td data-title="'Type'" sortable="'db_type'" filter="{ 'db_type': 'text' }">
+                            {{dbconfigs.db_type}}
+                        </td>
+                        <td data-title="'Host'" sortable="'host'" filter="{ 'host': 'text' }">
+                            {{dbconfigs.host}}
+                        </td>    
+                        <td data-title="'Port'" sortable="'port'" filter="{ 'port': 'text' }">
+                            {{dbconfigs.port}}
+                        </td>    
+                        <td data-title="'Schema'" sortable="'schema'" filter="{ 'schema': 'text' }">
+                            {{dbconfigs.schema}}
+                        </td>    
+                        <td data-title="'UserName'" sortable="'uname'" filter="{ 'uname': 'text' }">
+                            {{dbconfigs.uname}}
+                        </td>
+                        <td data-title="'Password'" >
+                            <input disabled style="background-color: transparent" class="form-control no-border" type="password" value='{{dbconfigs.pwd}}'>
+                        </td>
+                    </tr>
+                </table>
+            </uib-tab>
+            <uib-tab index="2" heading="Register Query" select="changeActiveTab(2)">
+                <br>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="form-group">
+                                <label class='control-label dbconn col-sm-2'>DB Max Active Connection</label>
+                                <div class="dbconninput col-sm-1">
+                                    <input id="txtMaxActive" class="form-control" ng-model="app.dbconfig.max_active" placeholder="50" 
+                                        uib-tooltip="The maximum number of active connections that can be allocated from the connection pool at the same time." tooltip-class="tooltip-addpp" tooltip-placement="top" tooltip-trigger="'mouseenter'" />
+                                </div>
+                                <label class='control-label dbconn col-sm-2'>DB Max Idle Connection</label>
+                                <div class="dbconninput col-sm-1">
+                                    <input id="txtMaxIdle" class="form-control" ng-model="app.dbconfig.max_idle" placeholder="30" 
+                                        uib-tooltip="The maximum number of connections that should be kept in the pool at all times." tooltip-placement="top" tooltip-class="tooltip-addpp" tooltip-trigger="'mouseenter'" />
+                                </div>
+                                <label class='control-label dbconn col-sm-2'>DB Max Wait Time</label>
+                                <div class="dbconninput col-sm-2">
+                                    <input id="txtMaxWait" class="form-control" ng-model="app.dbconfig.max_wait" placeholder="10000"  tooltip-class="tooltip-addpp"
+                                        uib-tooltip="The maximum number of milliseconds that the pool will wait (when there are no available connections) for a connection to be returned before throwing an exception." tooltip-placement="top" tooltip-trigger="'mouseenter'" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="form-group required">
+                                <label class="control-label col-sm-1">Query</label>
+                                <div class="col-sm-11">
+                                    <textarea ng-disabled="disableQueryText" rows="11" style="font-size: 12px; font-family:Tahoma" required id="textQuery" class="form-control" ng-model="app.db_query"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <input style="margin-left: 73px;" tooltip-placement="top" uib-tooltip="Test Query" type="button" class="btn btn-default btn-sm" value="Test Query" ng-click="testQuery()"></input>
+                        <input style="margin-left: 20px;" data-toggle="tooltip" data-placement="top" title="Change Query!" type="button" class="btn btn-default btn-sm" value="Reset" ng-click="resetQuery()"></input>
+                        <input style="margin-left: 20px;" data-toggle="tooltip" data-placement="top" title="Enabled on testing query successfully!" ng-disabled="disableCreateBtn" type="button" class="btn btn-success btn-md" value="Create" ng-click="createApp()"></input>
+                        <br>
+                        <label ng-show="showQueryLabel" style="color: red" class="control-label col-md-12">Failed: <span style="font-size: 12px; font-weight: 600;">{{queryResponse}}</span></label>
+                        
+                        <!--<div class="row">
+                            <div class="form-group">
+                                <label class="control-label col-md-1" for="textQuery">Result</label>
+                                <div class="col-md-4">
+                                    <input style="color:{{queryResultColor}}" class="form-control" ng-model="queryResult" value="{{queryResult}}">
+                                    <button style="border:0;" type="button" class="btn btn-success btn-transparent" 
+                                        ng-click="open(testQueryResult)">View Result</button>
+                                </div>
+                            </div>
+                        </div>-->
+                        
+                    </div>
+            </uib-tab>
+        </uib-tabset>
+        
+        </form>
+    </div>
+    <div class="panel-footer" style="margin-top: 20px; background-color: transparent">
+            <button type="button" ng-disabled="previousBtnDisabled" class="btn btn-default btn-sm" ng-click="activeTab = previousActiveTab">Previous</button>
+            <button type="button" ng-disabled="nextBtnDisabled" class="btn btn-default btn-sm" ng-click="activeTab = nextActiveTab">Next</button>
+    </div>
+</div>
+</div>

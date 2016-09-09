@@ -1,0 +1,713 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  font-family: Tahoma;
+}
+
+body h2{
+  font-size: 24px;
+  font-weight: 600;
+  color: #263238;
+  font-family: Tahoma;
+}
+
+body h3{
+  font-size: 24px;
+  font-weight: 600;
+  color: #263238;
+  font-family: Tahoma;
+  margin-top: 7px;
+}
+
+body h4{
+  font-size: 15px;
+  font-weight: 600;
+  color: #455A64;
+  margin-top: 0px;
+}
+
+.red{
+  color: red;
+}
+.green {
+  color: green;
+}
+.amber {
+  color: 	#FFBF00;
+}
+.blue {
+  color: 	blue;
+}
+.grey{
+  color: #595959;
+}
+
+.header-userdetails {
+  font-size: 12px;
+  z-index: 9999;
+  padding: 10px
+}
+
+.header-welcome-msg{
+  margin: 8px 0 0 0;
+}
+
+.control-label{
+  font-size: 13px;
+  font-weight: 600;
+  color: black;
+}
+
+.control-label.dbconn{
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 0px;
+  padding-right: 0px;
+  color: black;
+} 
+#loading-bar .bar {
+  position: relative;
+}
+.dbconninput{
+  margin-left: 5px;
+  padding-left: 0px;
+  margin-right: 50px;
+}
+
+html.ng-scope body div.container-fluid div.row div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main div.ng-scope div.ng-scope div div form#appInfoForm.form-horizontal.ng-pristine.ng-invalid.ng-invalid-required div.ng-isolate-scope div.tab-content div.tab-pane.ng-scope.active div.container-fluid.ng-scope div.row div.form-group div.col-sm-1
+
+.appdetails{
+  font-size: 12px;
+  font-weight: 600;
+  padding-top: 30px;
+  padding-right: -10px;
+}
+
+.panel-body.description{
+  font-size: 13px;
+  font-family: Tahoma;
+  height: 80px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+}
+
+.panel-title{
+  font-size: 15px;
+}
+
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: grey;         /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}
+
+div.modal-footer button.btn.btn-info{
+  background-color: #546E7A;
+  color: #ECEFF1;
+}
+.btn.btn-info.btn-md.col-md-1.pull-right {
+  margin-right: 10px;
+  background-color: #455A64;
+  color: #ECEFF1;
+}
+
+
+.btn.btn-info.btn-md.col-md-2.pull-right {
+  margin-right: 10px;
+  background-color: #455A64;
+  color: #ECEFF1;
+}
+
+.btn.btn-info.btn-md {
+ 
+  background-color: #455A64;
+  color: #ECEFF1;
+}
+
+.modal-dialog.modal-sm{
+    position: center;
+    width: 500px;
+    margin-top: 30px;
+}
+
+.modal-dialog.modal-md{
+    width:480px;
+    overflow-y: initial !important
+}
+.modal-dialog.modal-lg{
+  width:90%;
+  overflow-y: initial !important
+}
+
+.modal-dialog.modal-lg .modal-header{
+  margin-top: 10px;
+}
+
+.modal-body.custom{
+    height: 400px;
+    overflow-y: auto;
+}
+
+.modal-header{
+  margin-top: 30px;
+}
+
+.modal-title.prompt{
+  font-size: 18px;
+  font-family: Tahoma;
+}
+
+body .modal-header{
+  color: 212121;
+}
+
+.ng-hide {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  top:-200px;
+  left: 200px;
+}
+
+.form-horizontal .control-label{
+  text-align:left;
+}
+
+#dbSearchGroup{
+  margin: 0px;
+  padding: 0px;
+}
+
+.btn-success{
+  font-weight: 600; 
+  font-size: 13px; 
+  font-family: Tahoma;
+}
+
+.btn-logout{
+  text-decoration: underline;
+}
+
+.breadcrumb > li {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.form-group.required .control-label:after { 
+   content:"*";
+   color:red;
+} 
+
+.row.app-details{
+  margin-top: 10px; padding-right: 5px;
+}
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+/*
+ * Top navigation
+ * Hide default border to remove 1px line.
+ */
+.navbar-fixed-top {
+  border: 0;
+}
+
+.navbar-header > a {
+  color: lightgray;
+}
+
+.no-border {
+    border: 0;
+    box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
+}
+
+table.table.table-hover.table-condensed tbody {
+  text-align: center;
+}
+
+.panel-heading.ng-binding {
+  color: white;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+body > div.container-fluid > div > div.col-sm-3.col-md-2.sidebar > ul > li.active > a {
+  background-color: #4d4d4d;
+}
+
+div.panel.panel-default.ng-scope div.panel-heading.ng-binding{
+  background-color: #4d4d4d;
+  border: none;
+}
+
+div.panel.panel-default.ng-scope div.panel-body div.ng-scope div.panel {
+  height: 200px;
+  max-width: 200px;
+  width: 200px;
+  border: none;
+}
+
+div.panel.panel-primary div.panel-heading{
+  text-align: center;
+  border: none;
+  border-bottom: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  border-radius: 1em/.4em;
+}
+
+div.panel-body{
+  text-align: justify;
+  border: none;
+  border-radius: 1em/.4em;
+}
+
+div.panel.panel-primary{
+  text-align: center;
+  border: none;
+  border-radius: 1em/.4em;
+}
+div.panel.panel-primary div.panel-footer {
+  text-align: center;
+  background-color: #ECEFF1;
+  border: none;
+  border-radius: 1em/.4em;
+}
+
+.hspan{
+  font-size: 14px;
+  font-weight: bold;
+  vertical-align: middle;
+  font-family: sans-serif;
+  color: #EFEBE9;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.bspan{
+  font-size: 12px;
+  font-weight: 500;
+  font-family: Tahoma;
+  color: black;
+}
+.fspan{
+  font-size: 12px;
+  font-weight: bold;
+  vertical-align: middle;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+  color: #263238;
+  
+}
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+ul.nav.nav-sidebar li ul.nav.nav-sidebar ul.nav li a {
+  padding-right: 10px;
+  padding-left: 60px;
+}
+
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholders h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+} 
+
+.btn-primary.btn-transparent {
+  color: #337ab7;
+  background-color: transparent;
+  border-color: #337ab7;
+  font-weight: 500;
+}
+.btn-primary.btn-transparent:focus, .btn-primary.btn-transparent.focus {
+  color: #337ab7;
+  background-color: transparent;
+  border-color: #183854;
+}
+.btn-primary.btn-transparent:hover {
+  color: #337ab7;
+  background-color: transparent;
+  border-color: #265a88;
+}
+.btn-primary.btn-transparent:active, .btn-primary.btn-transparent.active, .open > .btn-primary.btn-transparent.dropdown-toggle {
+  color: #337ab7;
+  background-color: transparent;
+  border-color: #265a88;
+}
+.btn-primary.btn-transparent:active:hover, .btn-primary.btn-transparent:active:focus, .btn-primary.btn-transparent:active.focus, .btn-primary.btn-transparent.active:hover, .btn-primary.btn-transparent.active:focus, .btn-primary.btn-transparent.active.focus, .open > .btn-primary.btn-transparent.dropdown-toggle:hover, .open > .btn-primary.btn-transparent.dropdown-toggle:focus, .open > .btn-primary.btn-transparent.dropdown-toggle.focus {
+  color: #337ab7;
+  background-color: transparent;
+  border-color: #183854;
+}
+.btn-primary.btn-transparent:active, .btn-primary.btn-transparent.active, .open > .btn-primary.btn-transparent.dropdown-toggle {
+  background-image: none;
+}
+.btn-primary.btn-transparent.disabled:hover, .btn-primary.btn-transparent.disabled:focus, .btn-primary.btn-transparent.disabled.focus, .btn-primary.btn-transparent[disabled]:hover, .btn-primary.btn-transparent[disabled]:focus, .btn-primary.btn-transparent[disabled].focus, fieldset[disabled] .btn-primary.btn-transparent:hover, fieldset[disabled] .btn-primary.btn-transparent:focus, fieldset[disabled] .btn-primary.btn-transparent.focus {
+  background-color: transparent;
+  border-color: #337ab7;
+}
+.btn-primary.btn-transparent .badge {
+  color: transparent;
+  background-color: #337ab7;
+}
+.btn-primary.btn-transparent:hover {
+  color: #337ab7;
+  background-color: #183854;
+  border-color: #337ab7;
+}
+.btn-primary.btn-transparent:hover:focus, .btn-primary.btn-transparent:hover.focus {
+  color: #337ab7;
+  background-color: #0c1d2c;
+  border-color: #183854;
+}
+.btn-primary.btn-transparent:hover:hover {
+  color: #337ab7;
+  background-color: #0c1d2c;
+  border-color: #265a88;
+}
+.btn-primary.btn-transparent:hover:active, .btn-primary.btn-transparent:hover.active, .open > .btn-primary.btn-transparent:hover.dropdown-toggle {
+  color: #337ab7;
+  background-color: #0c1d2c;
+  border-color: #265a88;
+}
+.btn-primary.btn-transparent:hover:active:hover, .btn-primary.btn-transparent:hover:active:focus, .btn-primary.btn-transparent:hover:active.focus, .btn-primary.btn-transparent:hover.active:hover, .btn-primary.btn-transparent:hover.active:focus, .btn-primary.btn-transparent:hover.active.focus, .open > .btn-primary.btn-transparent:hover.dropdown-toggle:hover, .open > .btn-primary.btn-transparent:hover.dropdown-toggle:focus, .open > .btn-primary.btn-transparent:hover.dropdown-toggle.focus {
+  color: #337ab7;
+  background-color: #050b10;
+  border-color: #183854;
+}
+.btn-primary.btn-transparent:hover:active, .btn-primary.btn-transparent:hover.active, .open > .btn-primary.btn-transparent:hover.dropdown-toggle {
+  background-image: none;
+}
+.btn-primary.btn-transparent:hover.disabled:hover, .btn-primary.btn-transparent:hover.disabled:focus, .btn-primary.btn-transparent:hover.disabled.focus, .btn-primary.btn-transparent:hover[disabled]:hover, .btn-primary.btn-transparent:hover[disabled]:focus, .btn-primary.btn-transparent:hover[disabled].focus, fieldset[disabled] .btn-primary.btn-transparent:hover:hover, fieldset[disabled] .btn-primary.btn-transparent:hover:focus, fieldset[disabled] .btn-primary.btn-transparent:hover.focus {
+  background-color: #183854;
+  border-color: #337ab7;
+}
+.btn-primary.btn-transparent:hover .badge {
+  color: #183854;
+  background-color: #337ab7;
+}
+
+.btn-success.btn-inverse {
+  color: #5cb85c;
+  background-color: #fff;
+  border-color: #5cb85c;
+}
+.btn-success.btn-inverse:focus, .btn-success.btn-inverse.focus {
+  color: #5cb85c;
+  background-color: #e6e6e6;
+  border-color: #2d672d;
+}
+.btn-success.btn-inverse:hover {
+  color: #5cb85c;
+  background-color: #e6e6e6;
+  border-color: #419641;
+}
+.btn-success.btn-inverse:active, .btn-success.btn-inverse.active, .open > .btn-success.btn-inverse.dropdown-toggle {
+  color: #5cb85c;
+  background-color: #e6e6e6;
+  border-color: #419641;
+}
+.btn-success.btn-inverse:active:hover, .btn-success.btn-inverse:active:focus, .btn-success.btn-inverse:active.focus, .btn-success.btn-inverse.active:hover, .btn-success.btn-inverse.active:focus, .btn-success.btn-inverse.active.focus, .open > .btn-success.btn-inverse.dropdown-toggle:hover, .open > .btn-success.btn-inverse.dropdown-toggle:focus, .open > .btn-success.btn-inverse.dropdown-toggle.focus {
+  color: #5cb85c;
+  background-color: #d4d4d4;
+  border-color: #2d672d;
+}
+.btn-success.btn-inverse:active, .btn-success.btn-inverse.active, .open > .btn-success.btn-inverse.dropdown-toggle {
+  background-image: none;
+}
+.btn-success.btn-inverse.disabled:hover, .btn-success.btn-inverse.disabled:focus, .btn-success.btn-inverse.disabled.focus, .btn-success.btn-inverse[disabled]:hover, .btn-success.btn-inverse[disabled]:focus, .btn-success.btn-inverse[disabled].focus, fieldset[disabled] .btn-success.btn-inverse:hover, fieldset[disabled] .btn-success.btn-inverse:focus, fieldset[disabled] .btn-success.btn-inverse.focus {
+  background-color: #fff;
+  border-color: #5cb85c;
+}
+.btn-success.btn-inverse .badge {
+  color: #fff;
+  background-color: #5cb85c;
+}
+.btn-success.btn-inverse:hover {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.btn-success.btn-inverse:hover:focus, .btn-success.btn-inverse:hover.focus {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #255625;
+}
+.btn-success.btn-inverse:hover:hover {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.btn-success.btn-inverse:hover:active, .btn-success.btn-inverse:hover.active, .open > .btn-success.btn-inverse:hover.dropdown-toggle {
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+.btn-success.btn-inverse:hover:active:hover, .btn-success.btn-inverse:hover:active:focus, .btn-success.btn-inverse:hover:active.focus, .btn-success.btn-inverse:hover.active:hover, .btn-success.btn-inverse:hover.active:focus, .btn-success.btn-inverse:hover.active.focus, .open > .btn-success.btn-inverse:hover.dropdown-toggle:hover, .open > .btn-success.btn-inverse:hover.dropdown-toggle:focus, .open > .btn-success.btn-inverse:hover.dropdown-toggle.focus {
+  color: #fff;
+  background-color: #398439;
+  border-color: #255625;
+}
+.btn-success.btn-inverse:hover:active, .btn-success.btn-inverse:hover.active, .open > .btn-success.btn-inverse:hover.dropdown-toggle {
+  background-image: none;
+}
+.btn-success.btn-inverse:hover.disabled:hover, .btn-success.btn-inverse:hover.disabled:focus, .btn-success.btn-inverse:hover.disabled.focus, .btn-success.btn-inverse:hover[disabled]:hover, .btn-success.btn-inverse:hover[disabled]:focus, .btn-success.btn-inverse:hover[disabled].focus, fieldset[disabled] .btn-success.btn-inverse:hover:hover, fieldset[disabled] .btn-success.btn-inverse:hover:focus, fieldset[disabled] .btn-success.btn-inverse:hover.focus {
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.btn-success.btn-inverse:hover .badge {
+  color: #5cb85c;
+  background-color: #fff;
+}
+.btn-success.btn-transparent {
+  color: #263238;
+  background-color: transparent;
+  border-color: #5cb85c;
+  font-size: 11px;
+  font-family: Tahoma;
+  font-weight: 600;
+}
+.btn-success.btn-transparent:focus, .btn-success.btn-transparent.focus {
+  color: #5cb85c;
+  background-color: transparent;
+  border-color: #2d672d;
+}
+.btn-success.btn-transparent:hover {
+  color: #5cb85c;
+  background-color: transparent;
+  border-color: #419641;
+}
+.btn-success.btn-transparent:active, .btn-success.btn-transparent.active, .open > .btn-success.btn-transparent.dropdown-toggle {
+  color: #5cb85c;
+  background-color: transparent;
+  border-color: #419641;
+}
+.btn-success.btn-transparent:active:hover, .btn-success.btn-transparent:active:focus, .btn-success.btn-transparent:active.focus, .btn-success.btn-transparent.active:hover, .btn-success.btn-transparent.active:focus, .btn-success.btn-transparent.active.focus, .open > .btn-success.btn-transparent.dropdown-toggle:hover, .open > .btn-success.btn-transparent.dropdown-toggle:focus, .open > .btn-success.btn-transparent.dropdown-toggle.focus {
+  color: #5cb85c;
+  background-color: transparent;
+  border-color: #2d672d;
+}
+.btn-success.btn-transparent:active, .btn-success.btn-transparent.active, .open > .btn-success.btn-transparent.dropdown-toggle {
+  background-image: none;
+}
+.btn-success.btn-transparent.disabled:hover, .btn-success.btn-transparent.disabled:focus, .btn-success.btn-transparent.disabled.focus, .btn-success.btn-transparent[disabled]:hover, .btn-success.btn-transparent[disabled]:focus, .btn-success.btn-transparent[disabled].focus, fieldset[disabled] .btn-success.btn-transparent:hover, fieldset[disabled] .btn-success.btn-transparent:focus, fieldset[disabled] .btn-success.btn-transparent.focus {
+  background-color: transparent;
+  border-color: #5cb85c;
+}
+.btn-success.btn-transparent .badge {
+  color: transparent;
+  background-color: #5cb85c;
+}
+.btn-success.btn-transparent:hover {
+  color: #5cb85c;
+  background-color: #2d672d;
+  border-color: #5cb85c;
+}
+.btn-success.btn-transparent:hover:focus, .btn-success.btn-transparent:hover.focus {
+  color: #5cb85c;
+  background-color: #1e441e;
+  border-color: #2d672d;
+}
+.btn-success.btn-transparent:hover:hover {
+  color: #5cb85c;
+  background-color: #1e441e;
+  border-color: #419641;
+}
+.btn-success.btn-transparent:hover:active, .btn-success.btn-transparent:hover.active, .open > .btn-success.btn-transparent:hover.dropdown-toggle {
+  color: #5cb85c;
+  background-color: #1e441e;
+  border-color: #419641;
+}
+.btn-success.btn-transparent:hover:active:hover, .btn-success.btn-transparent:hover:active:focus, .btn-success.btn-transparent:hover:active.focus, .btn-success.btn-transparent:hover.active:hover, .btn-success.btn-transparent:hover.active:focus, .btn-success.btn-transparent:hover.active.focus, .open > .btn-success.btn-transparent:hover.dropdown-toggle:hover, .open > .btn-success.btn-transparent:hover.dropdown-toggle:focus, .open > .btn-success.btn-transparent:hover.dropdown-toggle.focus {
+  color: #5cb85c;
+  background-color: #132b13;
+  border-color: #2d672d;
+}
+.btn-success.btn-transparent:hover:active, .btn-success.btn-transparent:hover.active, .open > .btn-success.btn-transparent:hover.dropdown-toggle {
+  background-image: none;
+}
+.btn-success.btn-transparent:hover.disabled:hover, .btn-success.btn-transparent:hover.disabled:focus, .btn-success.btn-transparent:hover.disabled.focus, .btn-success.btn-transparent:hover[disabled]:hover, .btn-success.btn-transparent:hover[disabled]:focus, .btn-success.btn-transparent:hover[disabled].focus, fieldset[disabled] .btn-success.btn-transparent:hover:hover, fieldset[disabled] .btn-success.btn-transparent:hover:focus, fieldset[disabled] .btn-success.btn-transparent:hover.focus {
+  background-color: #2d672d;
+  border-color: #5cb85c;
+}
+.btn-success.btn-transparent:hover .badge {
+  color: #2d672d;
+  background-color: #5cb85c;
+}
+
+.btn-info.btn-transparent {
+  color: #5bc0de;
+  background-color: transparent;
+  border-color: #5bc0de;
+}
+.btn-info.btn-transparent:focus, .btn-info.btn-transparent.focus {
+  color: #5bc0de;
+  background-color: transparent;
+  border-color: #1f7e9a;
+}
+.btn-info.btn-transparent:hover {
+  color: #5bc0de;
+  background-color: transparent;
+  border-color: #2aabd2;
+}
+.btn-info.btn-transparent:active, .btn-info.btn-transparent.active, .open > .btn-info.btn-transparent.dropdown-toggle {
+  color: #5bc0de;
+  background-color: transparent;
+  border-color: #2aabd2;
+}
+.btn-info.btn-transparent:active:hover, .btn-info.btn-transparent:active:focus, .btn-info.btn-transparent:active.focus, .btn-info.btn-transparent.active:hover, .btn-info.btn-transparent.active:focus, .btn-info.btn-transparent.active.focus, .open > .btn-info.btn-transparent.dropdown-toggle:hover, .open > .btn-info.btn-transparent.dropdown-toggle:focus, .open > .btn-info.btn-transparent.dropdown-toggle.focus {
+  color: #5bc0de;
+  background-color: transparent;
+  border-color: #1f7e9a;
+}
+.btn-info.btn-transparent:active, .btn-info.btn-transparent.active, .open > .btn-info.btn-transparent.dropdown-toggle {
+  background-image: none;
+}
+.btn-info.btn-transparent.disabled:hover, .btn-info.btn-transparent.disabled:focus, .btn-info.btn-transparent.disabled.focus, .btn-info.btn-transparent[disabled]:hover, .btn-info.btn-transparent[disabled]:focus, .btn-info.btn-transparent[disabled].focus, fieldset[disabled] .btn-info.btn-transparent:hover, fieldset[disabled] .btn-info.btn-transparent:focus, fieldset[disabled] .btn-info.btn-transparent.focus {
+  background-color: transparent;
+  border-color: #5bc0de;
+}
+.btn-info.btn-transparent .badge {
+  color: transparent;
+  background-color: #5bc0de;
+}
+.btn-info.btn-transparent:hover {
+  color: #5bc0de;
+  background-color: #1f7e9a;
+  border-color: #5bc0de;
+}
+.btn-info.btn-transparent:hover:focus, .btn-info.btn-transparent:hover.focus {
+  color: #5bc0de;
+  background-color: #175b70;
+  border-color: #1f7e9a;
+}
+.btn-info.btn-transparent:hover:hover {
+  color: #5bc0de;
+  background-color: #175b70;
+  border-color: #2aabd2;
+}
+.btn-info.btn-transparent:hover:active, .btn-info.btn-transparent:hover.active, .open > .btn-info.btn-transparent:hover.dropdown-toggle {
+  color: #5bc0de;
+  background-color: #175b70;
+  border-color: #2aabd2;
+}
+.btn-info.btn-transparent:hover:active:hover, .btn-info.btn-transparent:hover:active:focus, .btn-info.btn-transparent:hover:active.focus, .btn-info.btn-transparent:hover.active:hover, .btn-info.btn-transparent:hover.active:focus, .btn-info.btn-transparent:hover.active.focus, .open > .btn-info.btn-transparent:hover.dropdown-toggle:hover, .open > .btn-info.btn-transparent:hover.dropdown-toggle:focus, .open > .btn-info.btn-transparent:hover.dropdown-toggle.focus {
+  color: #5bc0de;
+  background-color: #114352;
+  border-color: #1f7e9a;
+}
+.btn-info.btn-transparent:hover:active, .btn-info.btn-transparent:hover.active, .open > .btn-info.btn-transparent:hover.dropdown-toggle {
+  background-image: none;
+}
+.btn-info.btn-transparent:hover.disabled:hover, .btn-info.btn-transparent:hover.disabled:focus, .btn-info.btn-transparent:hover.disabled.focus, .btn-info.btn-transparent:hover[disabled]:hover, .btn-info.btn-transparent:hover[disabled]:focus, .btn-info.btn-transparent:hover[disabled].focus, fieldset[disabled] .btn-info.btn-transparent:hover:hover, fieldset[disabled] .btn-info.btn-transparent:hover:focus, fieldset[disabled] .btn-info.btn-transparent:hover.focus {
+  background-color: #1f7e9a;
+  border-color: #5bc0de;
+}
+.btn-info.btn-transparent:hover .badge {
+  color: #1f7e9a;
+  background-color: #5bc0de;
+}
+
+.close-custom {
+padding-left: 2px;
+font-size: 16px;
+font-weight: 500;
+line-height: 0.5;
+color: #DC143C;
+text-shadow: 0 0.5px 0 #fff;
+filter: alpha(opacity=10);
+}

@@ -1,0 +1,16 @@
+applications:
+- name: FoxIntegrationHub
+  instances: 1
+  memory: 512M
+  env:
+    FIH_SVC_USER: dummy
+    FIH_SVC_PASSWORD: dummy
+    STACKATO_API_URL: https://api.stackato-poc.foxinc.com
+    STACKATO_AOK_URL: https://aok.stackato-poc.foxinc.com
+    STACKATO_API_TIMEOUT: 150000
+    SESSION_SECRET_KEY: "dummySecretKey"
+    MONGODB_CONN_STR: "dummyConnStr"
+    NODE_TLS_REJECT_UNAUTHORIZED: 0
+    OAUTH_CLIENT_ID: dummyClientId
+    OAUTH_CLIENT_SECRET: dummySecretKey
+    OAUTH_REDIRECT_URL: https://foxintegrationhub.soaqa.stackato-poc.foxinc.com/auth/callback
